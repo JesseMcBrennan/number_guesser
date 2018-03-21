@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Guesser</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Number <span>Guesser</span></h1>
+  </header>
+<main class="guessForm">
+  <article>
+    <form id="guessForm">
+      <input type="number" name="newGuesss" class="newGuess" id=" newMin" placeholder="New Minimum" disabled>
+      
+      <input type="text" name="Guess" id="user-input" placeholder="Enter your guess" class="number">
+
+      <input type="number" name="newGuesss" class="newGuess" id="newMax" placeholder="New Maximum" disabled>
+    </form>
+      <button class="buttonGuess" class="buttonColor" id="guessPlease" disabled>Guess</button>
+      <button class="clearButton" class="buttonColor" id="clearBtn" disabled>Clear</button>
+  </article>
+  <article class="yourGuess">
+    <p id="enterGuess">&zwnj;</p>
+    <p id="lastGuess">&zwnj;</p>
+    <p id="hint">&zwnj;</p>
+  </article>
+  <article>
+      <button type="reset" class="buttonReset" id="resetBtn" disabled>Reset</button>
+  </article>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
