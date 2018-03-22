@@ -1,19 +1,26 @@
 
 //Number Generator
+//var randomNumber = Math.floor(Math.random() * 100 + 1);
+var min = 1;
+var max = 100;
+var randomNumber = Math.floor(Math.random() * (max - min) + min)
 
-var randomNumber = Math.floor(Math.random() * 100 + 1);
 console.log(randomNumber)
+
+
 
 //User Input
 
-var userInput = document.querySelector('#user-input');
+var userInput = document.getElementById('userinput');
 
 //Buttons
 
 var submitBtn = document.querySelector('#guessPlease');
 var clearBtn = document.querySelector('#clearBtn');
 var resetBtn = document.querySelector('#resetBtn');
-var userInputclear = document.querySelector('number');
+
+var newInputmin = document.querySelector('#new-min');
+var newInputmax = document.querySelector('#new-max')
 
 //Displayed Text
 
@@ -24,8 +31,6 @@ var guessForm = document.querySelector('#guessForm');
 
 //Change to document.querySelector
 
-var min = 1;
-var max = 100;
 
 //Functions
 
@@ -33,7 +38,6 @@ userInput.addEventListener('keypress', function() {
   submitBtn.disabled = false;
   resetBtn.disabled = false;
   clearBtn.disabled = false;
-
 })
 
 submitBtn.addEventListener('click', function() {
@@ -42,32 +46,32 @@ submitBtn.addEventListener('click', function() {
 
 submitBtn.addEventListener('click', function() {
   var currentGuess = parseInt(userInput.value) 
-  if (currentGuess < 0) {
+  if (currentGuess < min) {
     hint.innerText = 'Your guess must be between 1 and 100'
-  } else if (currentGuess > 100) {
+  } else if (currentGuess > max) {
     hint.innerText = 'Your guess must be between 1 and 100'
   } else if (currentGuess < randomNumber) {
-    hint.innerText = 'Too Low'
+    hint.innerText = 'Too Low' 
   } else if (currentGuess > randomNumber) {
-    hint.innerText = 'Too High'
+    hint.innerText = 'Too High' 
   } else if (isNaN(currentGuess)) {
     lastGuess.innerText = 'This is not a number' 
-  } else if (currentGuess === randomNumber) {
+  } else if (currentGuess === randomNumber) 
     lastGuess.innerText = 'YOU GOT IT!'
-  }
+    youWon(); 
 })
 
-//Button Functions
+//Button Functions variable that = parseint.uservalue 
 
 resetBtn.addEventListener('click', function() {
   location.reload();
 })
 
 clearBtn.addEventListener('click', function() {
-  userInput.value = " ";
-  lastGuess.innerText = " ";
-  hint.innerText = " ";
-  enterGuess.innerText = "Enter your guess";
+  userInput.value = "";
+  lastGuess.innerText = "";
+  hint.innerText = "";
+  enterGuess.innerText = "";
   clearBtn.disabled = true;
   resetBtn.disabled = true;
   submitBtn.disabled = true;
@@ -77,79 +81,21 @@ submitBtn.addEventListener('click', function() {
   enterGuess.innerText = "Your last guess was:"
 })
 
-/*function youWon() {
-  if lastGuess.
-}*/
-// Questins for Tony:
-
-
-//Notes - for Rest Button: look at text display field, if it not empty have button enabled
-
-
-
-
-/*submitBtn.addEventListener('click', function() {
-  var currentGuess = parseInt(userInput.value)
-  if (currentGuess < randomNumber) {
-    hint.innerText = 'Too Low'
-  } else if (currentGuess > randomNumber) {
-    hint.innerText = 'Too High'
-  } else if (currentGuess < 0) {
-    hint.innerText = 'Your guess must be between 1 and 100'
-  } else if (currentGuess > 100) {
-    hint.innerText = 'Your guess must be between 1 and 100'
-  } else if (currentGuess === NaN) {
-    hint.innerText = 'This is not a number' 
-  } else if (currentGuess === randomNumber) {
-    lastGuess.innerText = 'YOU GOT IT!'
-  }
-})
-
-resetBtn.addEventListener('click', function() {
-  location.reload();
-})*/
-
-
-
-/*submitBtn.addEventListener('click', function()) {
-  
-})*/
-
-
-
-
-/*//
-
-
-
-//First Step
-
-
-
-});
-
-function numberCheck(userInput) {
-    if (isNaN(userInput)) {
-    return 'Not a Number!';
-    }
-  return userInput;
+function newRandom(min, max) { 
+  randomNumber = Math.floor(Math.random() * (max - min) + min)
 }
 
-function compareNumber() {
-  if (guessConvert < min || guessConvert > max);
-  hint.innerText = 'Sorry you need to guess a number between 1 and 100'
+function youWon() { 
+  min = min - 10
+  max = max + 10
+  newRandom(min, max)
 }
-*/
-
-///Sudo Code
- // User inputs number -> function confirms input is a number -> if not, prints 'NaN', if is  parseINT Value
 
 
 
-// function userGuess() {
-//   if (var userInput <= var max)
-//   return lastGuess.innerText
-// }
+/*newInputmin.addEventListener('click', function() {
+
+})*/
 
 
 
