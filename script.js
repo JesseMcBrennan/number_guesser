@@ -57,8 +57,7 @@ submitBtn.addEventListener('click', function() {
   } else if (isNaN(currentGuess)) {
     lastGuess.innerText = 'This is not a number' 
   } else if (currentGuess === randomNumber) 
-    lastGuess.innerText = 'YOU GOT IT!'
-    youWon(); 
+    lastGuess.innerText = 'YOU GOT IT!' 
 })
 
 //Button Functions variable that = parseint.uservalue 
@@ -93,9 +92,6 @@ function youWon() {
 
 
 
-/*newInputmin.addEventListener('click', function() {
-
-})*/
 
 
 
